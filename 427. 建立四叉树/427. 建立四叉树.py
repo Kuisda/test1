@@ -26,7 +26,7 @@ class Solution(object):
         return dfs(0,0,len(grid),len(grid))
 
 #使用二维前缀和，用来优化判断全0或全1的过程
-#二维前缀和pre[i][j]表示的是以（i，j）为右下角的矩阵的数之和
+#二维前缀和pre[i][j]表示的是以（i-1，j-1）为右下角,（0,0）为左上角的矩阵的数之和，pre[0][j]与pre[i][0]都是0
 #pre[i][j] = pre[i-1][j]+pre[i][j-1]-pre[i-1][j-1]+grid[i-1][j-1]
 class Solution(object):
     def construct(self, grid):
@@ -36,7 +36,7 @@ class Solution(object):
             for j in range(1,n+1):
                 pre[i][j] = pre[i-1][j]+pre[i][j-1]-pre[i-1][j-1]+grid[i-1][j-1]
         def getSum(r0,c0,r1,c1):#利用前缀和求区间内的数之和
-            return pre[r1][c1]-pre[r1][c0]-pre[r0][c1]+pre[r0][c0]
+            return pre[r1][c1]-pre[r1][c0]-pre[r0][c1]+pre[r0][c0]#(r1,c1)在grid中对应的是(r1-1,c1-1)，可以看运行dfs时的后两个参数，恰好对应前缀和的pre[r1][c1]位置
         def dfs(r0,c0,r1,c1):
             total = getSum(r0,c0,r1,c1)
             if  total ==0:
