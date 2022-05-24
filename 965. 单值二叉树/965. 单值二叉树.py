@@ -7,7 +7,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
+class Solution:#return
     def isUnivalTree(self, root: TreeNode) -> bool:
         def preorder(node:TreeNode,num:int)->bool:
             if node is None:
