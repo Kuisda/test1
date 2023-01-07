@@ -8,7 +8,7 @@ class Solution:
 
         if total<x:
             return -1
-        while left<n-1:
+        while left<n-1:#永远不会导致left在right的右边，因为left = right-1的时候，total ==sum(nums)，必将导致right右移
             while right<n and total>x:
                 total-=nums[right]
                 right+=1
