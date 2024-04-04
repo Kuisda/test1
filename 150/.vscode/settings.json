@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "vector": "cpp",
+        "tuple": "cpp",
+        "cmath": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "new": "cpp",
+        "iostream": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "set": "cpp"
+    }
+}
